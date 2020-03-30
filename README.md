@@ -4,13 +4,17 @@ This is a simple list mobile app (to-do list, tasks, shopping list, recipes, and
 iOS 13.1 or higher is required to run the app. If there is a need to support earlier versions of iOS, refer to a similar project, [list-ios](https://github.com/cyliong/list-ios).
 
 ## Features
-- Display a list of items (`List`, Realm `Results`)
+- Display a list of items (`List`, `ForEach`)
 - Navigate to a page to add or edit items (`NavigationLink`, custom view with `Form` and `TextField`)
 - Swipe to delete items (`onDelete(perform:)`)
-- Store items in database using data model (Realm `Object`)
+- Store items in database (DAO, SQLite)
+
+## Data Access Layer
+The project implements a data access layer with the Data Access Object (DAO) pattern. 
+It uses generics, inheritance and Singleton pattern to make the creation of data access objects, as well as performing CRUD operations easier.
 
 ## Dependencies
-- Realm Database
+- FMDB
 
 ## Requirements
 - Xcode 11.1 or higher

@@ -1,25 +1,20 @@
 import SwiftUI
-import RealmSwift
 
 struct ContentView: View {
-    @State private var listItems = try! Realm().objects(ListItem.self)
+    @State private var listItems = ListDatabase.shared.listItemDao.getAll()
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(listItems) { item in
-                    if !item.isInvalidated {
-                        NavigationLink(destination: ItemView(listItems: self.$listItems, item: item)) {
-                            Text(item.title)
-                        }
+                    NavigationLink(destination: ItemView(listItems: self.$listItems, item: item)) {
+                        Text(item.title)
                     }
                 }
                 .onDelete { indexSet in
-                    let realm = try! Realm()
-                    try! realm.write {
-                        indexSet.forEach { realm.delete(self.listItems[$0]) }
-                        self.listItems = realm.objects(ListItem.self)
-                    }
+                    let dao = ListDatabase.shared.listItemDao
+                    indexSet.forEach { dao.delete(id: self.listItems[$0].id) }
+                    self.listItems = dao.getAll()
                 }
             }
             .navigationBarTitle("List")

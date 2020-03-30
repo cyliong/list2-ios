@@ -16,6 +16,10 @@
 		AF3C0DD3235F3C9100E5A7E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF3C0DD2235F3C9100E5A7E2 /* Preview Assets.xcassets */; };
 		AF3C0DD6235F3C9100E5A7E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF3C0DD4235F3C9100E5A7E2 /* LaunchScreen.storyboard */; };
 		AF3C0DDF235F51AA00E5A7E2 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3C0DDE235F51AA00E5A7E2 /* ListItem.swift */; };
+		AFD536E6242DC01E006E8E9D /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E3242DC01E006E8E9D /* DAO.swift */; };
+		AFD536E7242DC01E006E8E9D /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E4242DC01E006E8E9D /* Entity.swift */; };
+		AFD536E8242DC01E006E8E9D /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E5242DC01E006E8E9D /* AppDatabase.swift */; };
+		AFD536EB242DC609006E8E9D /* ListDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536EA242DC609006E8E9D /* ListDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,11 @@
 		AF3C0DD5235F3C9100E5A7E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF3C0DD7235F3C9100E5A7E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF3C0DDE235F51AA00E5A7E2 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		AFB4C6D4242D069D0017D82E /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		AFD536E3242DC01E006E8E9D /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		AFD536E4242DC01E006E8E9D /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		AFD536E5242DC01E006E8E9D /* AppDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
+		AFD536EA242DC609006E8E9D /* ListDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDatabase.swift; sourceTree = "<group>"; };
 		D28960B2A0F7338EF713417E /* Pods-List2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-List2.debug.xcconfig"; path = "Target Support Files/Pods-List2/Pods-List2.debug.xcconfig"; sourceTree = "<group>"; };
 		D44F7913CDFACBE1A06325AD /* Pods-List2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-List2.release.xcconfig"; path = "Target Support Files/Pods-List2/Pods-List2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,14 +93,17 @@
 		AF3C0DC8235F3C8F00E5A7E2 /* List2 */ = {
 			isa = PBXGroup;
 			children = (
+				AFD536E2242DBFB7006E8E9D /* DAODB */,
 				AF3C0DDD235F516400E5A7E2 /* Model */,
 				AF3C0DC9235F3C8F00E5A7E2 /* AppDelegate.swift */,
 				AF3C0DCB235F3C8F00E5A7E2 /* SceneDelegate.swift */,
 				AF3C0DCD235F3C8F00E5A7E2 /* ContentView.swift */,
 				AF1C90ED23605816007F655E /* ItemView.swift */,
+				AFD536EA242DC609006E8E9D /* ListDatabase.swift */,
 				AF3C0DCF235F3C9100E5A7E2 /* Assets.xcassets */,
 				AF3C0DD4235F3C9100E5A7E2 /* LaunchScreen.storyboard */,
 				AF3C0DD7235F3C9100E5A7E2 /* Info.plist */,
+				AFB4C6D4242D069D0017D82E /* Bridging-Header.h */,
 				AF3C0DD1235F3C9100E5A7E2 /* Preview Content */,
 			);
 			path = List2;
@@ -111,6 +123,16 @@
 				AF3C0DDE235F51AA00E5A7E2 /* ListItem.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AFD536E2242DBFB7006E8E9D /* DAODB */ = {
+			isa = PBXGroup;
+			children = (
+				AFD536E5242DC01E006E8E9D /* AppDatabase.swift */,
+				AFD536E3242DC01E006E8E9D /* DAO.swift */,
+				AFD536E4242DC01E006E8E9D /* Entity.swift */,
+			);
+			path = DAODB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,7 +249,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFD536E6242DC01E006E8E9D /* DAO.swift in Sources */,
 				AF3C0DDF235F51AA00E5A7E2 /* ListItem.swift in Sources */,
+				AFD536E8242DC01E006E8E9D /* AppDatabase.swift in Sources */,
+				AFD536EB242DC609006E8E9D /* ListDatabase.swift in Sources */,
+				AFD536E7242DC01E006E8E9D /* Entity.swift in Sources */,
 				AF3C0DCA235F3C8F00E5A7E2 /* AppDelegate.swift in Sources */,
 				AF3C0DCC235F3C8F00E5A7E2 /* SceneDelegate.swift in Sources */,
 				AF1C90EE23605816007F655E /* ItemView.swift in Sources */,
@@ -378,6 +404,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.ltp.List2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "List2/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -398,6 +425,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.ltp.List2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "List2/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
