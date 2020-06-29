@@ -2,7 +2,7 @@ import SwiftUI
 import RealmSwift
 
 struct ContentView: View {
-    @State private var listItems = try! Realm().objects(ListItem.self)
+    @State private var listItems = ListItem.findAll()
     
     var body: some View {
         NavigationView {
@@ -18,7 +18,7 @@ struct ContentView: View {
                     let realm = try! Realm()
                     try! realm.write {
                         indexSet.forEach { realm.delete(self.listItems[$0]) }
-                        self.listItems = realm.objects(ListItem.self)
+                        self.listItems = ListItem.findAll(from: realm)
                     }
                 }
             }

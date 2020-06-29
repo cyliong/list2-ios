@@ -15,3 +15,9 @@ class ListItem: Object, Identifiable {
         return "id"
     }
 }
+
+extension ListItem {
+    static func findAll(from realm: Realm = try! Realm()) -> Results<ListItem> {
+        realm.objects(ListItem.self).sorted(byKeyPath: "created")
+    }
+}

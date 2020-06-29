@@ -35,7 +35,7 @@ struct ItemView: View {
                         } else {
                             self.listItems[self.itemIndex].title = self.itemTitle
                         }
-                        self.listItems = realm.objects(ListItem.self)
+                        self.listItems = ListItem.findAll(from: realm)
                     }
                     self.presentationMode.wrappedValue.dismiss()
                 }
@@ -50,7 +50,7 @@ struct ItemView: View {
 struct ItemView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ItemView(listItems: .constant(try! Realm().objects(ListItem.self)))
+            ItemView(listItems: .constant(ListItem.findAll()))
         }
     }
 }
