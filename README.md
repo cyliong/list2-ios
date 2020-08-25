@@ -23,11 +23,5 @@ on the [realm](https://github.com/cyliong/list2-ios/tree/realm) branch.*
 
 ## Requirements
 - Xcode 11.6 or higher
-- Cocoapods 1.9.3 or higher
 - iOS 13.1 or higher
 - Swift 5 or higher
-
-## Setup
-1. Open **Terminal** and navigate to your project directory by using the `cd` command.
-2. Run `pod install` command.
-3. Open `List2.xcworkspace` in Xcode.
