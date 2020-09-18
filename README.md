@@ -22,6 +22,6 @@ on the [realm](https://github.com/cyliong/list2-ios/tree/realm) branch.*
 - FMDB
 
 ## Requirements
-- Xcode 11.6 or higher
+- Xcode 12 or higher
 - iOS 13.1 or higher
 - Swift 5 or higher
