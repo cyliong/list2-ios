@@ -48,7 +48,7 @@ struct ListWidget: Widget {
             ListWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("List")
-        .description("This is an example widget.")
+        .description("Display list items.")
     }
 }
 
