@@ -47,7 +47,7 @@ struct ListWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             ListWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
+        .configurationDisplayName("List")
         .description("This is an example widget.")
     }
 }
