@@ -41,7 +41,7 @@ struct ListWidgetEntryView : View {
 
 @main
 struct ListWidget: Widget {
-    let kind: String = "ListWidget"
+    let kind: String = "com.example.ltp.list-widget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
