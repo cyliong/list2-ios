@@ -36,7 +36,11 @@ struct ListWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        VStack {
+            ForEach(entry.items) { item in
+                Text(item.title)
+            }
+        }
     }
 }
 
