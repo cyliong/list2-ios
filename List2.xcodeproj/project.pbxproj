@@ -15,6 +15,8 @@
 		AF3C0DD3235F3C9100E5A7E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF3C0DD2235F3C9100E5A7E2 /* Preview Assets.xcassets */; };
 		AF3C0DD6235F3C9100E5A7E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF3C0DD4235F3C9100E5A7E2 /* LaunchScreen.storyboard */; };
 		AF3C0DDF235F51AA00E5A7E2 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3C0DDE235F51AA00E5A7E2 /* ListItem.swift */; };
+		AF5A5F85251E29C20063CCBF /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3C0DDE235F51AA00E5A7E2 /* ListItem.swift */; };
+		AF5A5F88251E29D00063CCBF /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E4242DC01E006E8E9D /* Entity.swift */; };
 		AF68B9C6251CDC6900B963C9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF68B9C5251CDC6900B963C9 /* WidgetKit.framework */; };
 		AF68B9C8251CDC6900B963C9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF68B9C7251CDC6900B963C9 /* SwiftUI.framework */; };
 		AF68B9CB251CDC6900B963C9 /* ListWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF68B9CA251CDC6900B963C9 /* ListWidget.swift */; };
@@ -302,7 +304,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF5A5F85251E29C20063CCBF /* ListItem.swift in Sources */,
 				AF68B9CB251CDC6900B963C9 /* ListWidget.swift in Sources */,
+				AF5A5F88251E29D00063CCBF /* Entity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
