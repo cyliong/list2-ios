@@ -54,8 +54,13 @@ struct ListWidget: Widget {
 }
 
 struct ListWidget_Previews: PreviewProvider {
+    static let items = [
+        ListItem(id: 1, title: "Item 1"),
+        ListItem(id: 2, title: "Item 2"),
+    ]
+    
     static var previews: some View {
-        ListWidgetEntryView(entry: ListEntry(date: Date(), items: []))
+        ListWidgetEntryView(entry: ListEntry(date: Date(), items: items))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
