@@ -3,11 +3,11 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> ListEntry {
-        ListEntry(date: Date())
+        ListEntry(date: Date(), items: [])
     }
 
     func getSnapshot(in context: Context, completion: @escaping (ListEntry) -> ()) {
-        let entry = ListEntry(date: Date())
+        let entry = ListEntry(date: Date(), items: [])
         completion(entry)
     }
 
@@ -18,7 +18,7 @@ struct Provider: TimelineProvider {
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = ListEntry(date: entryDate)
+            let entry = ListEntry(date: entryDate, items: [])
             entries.append(entry)
         }
 
@@ -29,6 +29,7 @@ struct Provider: TimelineProvider {
 
 struct ListEntry: TimelineEntry {
     let date: Date
+    let items: [ListItem]
 }
 
 struct ListWidgetEntryView : View {
@@ -54,7 +55,7 @@ struct ListWidget: Widget {
 
 struct ListWidget_Previews: PreviewProvider {
     static var previews: some View {
-        ListWidgetEntryView(entry: ListEntry(date: Date()))
+        ListWidgetEntryView(entry: ListEntry(date: Date(), items: []))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
