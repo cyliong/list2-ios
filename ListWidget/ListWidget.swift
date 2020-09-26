@@ -82,7 +82,15 @@ struct ListWidget_Previews: PreviewProvider {
     ]
     
     static var previews: some View {
-        ListWidgetEntryView(entry: ListEntry(date: Date(), items: items))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        Group {
+            ListWidgetEntryView(entry: ListEntry(date: Date(), items: items))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            
+            ListWidgetEntryView(entry: ListEntry(date: Date(), items: items))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+            
+            ListWidgetEntryView(entry: ListEntry(date: Date(), items: items))
+                .previewContext(WidgetPreviewContext(family: .systemLarge))
+        }
     }
 }
