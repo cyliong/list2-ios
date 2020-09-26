@@ -3,7 +3,11 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> ListEntry {
-        ListEntry(date: Date(), items: [])
+        let sampleItems = [
+            ListItem(id: 1, title: "Item 1"),
+            ListItem(id: 2, title: "Item 2"),
+        ]
+        return ListEntry(date: Date(), items: sampleItems)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (ListEntry) -> ()) {
