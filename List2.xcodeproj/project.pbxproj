@@ -28,6 +28,9 @@
 		AFD536E8242DC01E006E8E9D /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E5242DC01E006E8E9D /* AppDatabase.swift */; };
 		AFD536EB242DC609006E8E9D /* ListDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536EA242DC609006E8E9D /* ListDatabase.swift */; };
 		AFE070B12520D61900C9025E /* FMDB in Frameworks */ = {isa = PBXBuildFile; productRef = AFE070B02520D61900C9025E /* FMDB */; };
+		AFE070B42520D8D700C9025E /* ListDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536EA242DC609006E8E9D /* ListDatabase.swift */; };
+		AFE070B72520D8E100C9025E /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E5242DC01E006E8E9D /* AppDatabase.swift */; };
+		AFE070BA2520D8ED00C9025E /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E3242DC01E006E8E9D /* DAO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -309,9 +312,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE070BA2520D8ED00C9025E /* DAO.swift in Sources */,
 				AF5A5F85251E29C20063CCBF /* ListItem.swift in Sources */,
 				AF68B9CB251CDC6900B963C9 /* ListWidget.swift in Sources */,
+				AFE070B42520D8D700C9025E /* ListDatabase.swift in Sources */,
 				AF5A5F88251E29D00063CCBF /* Entity.swift in Sources */,
+				AFE070B72520D8E100C9025E /* AppDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
