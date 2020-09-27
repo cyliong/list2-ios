@@ -27,6 +27,7 @@
 		AFD536E7242DC01E006E8E9D /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E4242DC01E006E8E9D /* Entity.swift */; };
 		AFD536E8242DC01E006E8E9D /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E5242DC01E006E8E9D /* AppDatabase.swift */; };
 		AFD536EB242DC609006E8E9D /* ListDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536EA242DC609006E8E9D /* ListDatabase.swift */; };
+		AFE070B12520D61900C9025E /* FMDB in Frameworks */ = {isa = PBXBuildFile; productRef = AFE070B02520D61900C9025E /* FMDB */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 			files = (
 				AF68B9C8251CDC6900B963C9 /* SwiftUI.framework in Frameworks */,
 				AF68B9C6251CDC6900B963C9 /* WidgetKit.framework in Frameworks */,
+				AFE070B12520D61900C9025E /* FMDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +221,9 @@
 			dependencies = (
 			);
 			name = ListWidgetExtension;
+			packageProductDependencies = (
+				AFE070B02520D61900C9025E /* FMDB */,
+			);
 			productName = ListWidgetExtension;
 			productReference = AF68B9C3251CDC6900B963C9 /* ListWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -506,6 +511,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.ltp.List2.ListWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "List2/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -527,6 +533,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.ltp.List2.ListWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "List2/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -577,6 +584,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		AFB7CDAC24F515F000B70742 /* FMDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFB7CDAB24F515F000B70742 /* XCRemoteSwiftPackageReference "fmdb" */;
+			productName = FMDB;
+		};
+		AFE070B02520D61900C9025E /* FMDB */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AFB7CDAB24F515F000B70742 /* XCRemoteSwiftPackageReference "fmdb" */;
 			productName = FMDB;
