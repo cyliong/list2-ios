@@ -10,10 +10,17 @@ class AppDatabase {
     }
     
     func create() -> Bool {
+        guard let containerURL = FileManager
+                .default
+                .containerURL(
+                    forSecurityApplicationGroupIdentifier: "group.com.example.ltp.list"
+                )
+        else {
+            return false
+        }
+        
         do {
-            let databaseURL = try FileManager.default
-                .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-                .appendingPathComponent(name)
+            let databaseURL = containerURL.appendingPathComponent(name)
             database = FMDatabase(url: databaseURL)
             if let database = database, open() {
                 for statement in createStatements {
