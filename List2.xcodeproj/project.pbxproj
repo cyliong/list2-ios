@@ -513,7 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = ListWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ListWidget/ListWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ListWidget/Info.plist;
@@ -537,7 +537,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = ListWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ListWidget/ListWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ListWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
