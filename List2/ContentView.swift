@@ -15,6 +15,8 @@ struct ContentView: View {
                     let dao = ListDatabase.shared.listItemDao
                     indexSet.forEach { dao.delete(id: self.listItems[$0].id) }
                     self.listItems = dao.getAll()
+                    
+                    reloadTimelinesOfListWidget()
                 }
             }
             .navigationBarTitle("List")

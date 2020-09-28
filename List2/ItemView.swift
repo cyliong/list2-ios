@@ -36,6 +36,8 @@ struct ItemView: View {
                     }
                     self.listItems = dao.getAll()
                     self.presentationMode.wrappedValue.dismiss()
+                    
+                    reloadTimelinesOfListWidget()
                 }
             }
             .alert(isPresented: $showAlert) {
