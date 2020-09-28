@@ -31,6 +31,7 @@
 		AFE070B42520D8D700C9025E /* ListDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536EA242DC609006E8E9D /* ListDatabase.swift */; };
 		AFE070B72520D8E100C9025E /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E5242DC01E006E8E9D /* AppDatabase.swift */; };
 		AFE070BA2520D8ED00C9025E /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E3242DC01E006E8E9D /* DAO.swift */; };
+		AFE070D6252106AE00C9025E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE070D5252106AE00C9025E /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		AFD536EA242DC609006E8E9D /* ListDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDatabase.swift; sourceTree = "<group>"; };
 		AFE070BD2520DB1100C9025E /* List2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = List2.entitlements; sourceTree = "<group>"; };
 		AFE070C62520DCD700C9025E /* ListWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ListWidgetExtension.entitlements; sourceTree = "<group>"; };
+		AFE070D5252106AE00C9025E /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				AF3C0DCB235F3C8F00E5A7E2 /* SceneDelegate.swift */,
 				AF3C0DCD235F3C8F00E5A7E2 /* ContentView.swift */,
 				AF1C90ED23605816007F655E /* ItemView.swift */,
+				AFE070D5252106AE00C9025E /* View.swift */,
 				AFD536EA242DC609006E8E9D /* ListDatabase.swift */,
 				AF3C0DCF235F3C9100E5A7E2 /* Assets.xcassets */,
 				AF3C0DD4235F3C9100E5A7E2 /* LaunchScreen.storyboard */,
@@ -302,6 +305,7 @@
 			files = (
 				AFD536E6242DC01E006E8E9D /* DAO.swift in Sources */,
 				AF3C0DDF235F51AA00E5A7E2 /* ListItem.swift in Sources */,
+				AFE070D6252106AE00C9025E /* View.swift in Sources */,
 				AFD536E8242DC01E006E8E9D /* AppDatabase.swift in Sources */,
 				AFD536EB242DC609006E8E9D /* ListDatabase.swift in Sources */,
 				AFD536E7242DC01E006E8E9D /* Entity.swift in Sources */,
