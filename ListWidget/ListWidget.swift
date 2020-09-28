@@ -2,6 +2,10 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
+    private var entry: ListEntry {
+        ListEntry(date: Date(), items: ListDatabase.shared.listItemDao.getAll())
+    }
+    
     func placeholder(in context: Context) -> ListEntry {
         let sampleItems = [
             ListItem(id: 1, title: "Item 1"),
@@ -11,22 +15,11 @@ struct Provider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (ListEntry) -> ()) {
-        let entry = ListEntry(date: Date(), items: [])
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [ListEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = ListEntry(date: entryDate, items: [])
-            entries.append(entry)
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+        let timeline = Timeline(entries: [entry], policy: .never)
         completion(timeline)
     }
 }
@@ -65,6 +58,10 @@ struct ListWidgetEntryView : View {
 @main
 struct ListWidget: Widget {
     let kind: String = "com.example.ltp.list-widget"
+    
+    init() {
+        _ = ListDatabase.shared.create()
+    }
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
