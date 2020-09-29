@@ -33,25 +33,29 @@ struct ListWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("List")
-                .font(.title3)
-                .bold()
-            
-            ForEach(entry.items) { item in
-                Text(item.title)
-                Divider()
+        ZStack {
+            VStack(alignment: .leading) {
+                Text("List")
+                    .font(.headline)
+                    .bold()
+                
+                ForEach(entry.items) { item in
+                    Text(item.title)
+                        .font(.system(size: 15))
+                    Divider()
+                }
+                .padding(1)
             }
-            .padding(1)
+            .frame(
+                minWidth: 0,
+                maxWidth: .infinity,
+                minHeight: 0,
+                maxHeight: .infinity,
+                alignment: .topLeading
+            )
+            .padding()
         }
-        .frame(
-            minWidth: 0,
-            maxWidth: .infinity,
-            minHeight: 0,
-            maxHeight: .infinity,
-            alignment: .topLeading
-        )
-        .padding()
+        .padding(3)
     }
 }
 
