@@ -77,10 +77,7 @@ struct ListWidget: Widget {
 }
 
 struct ListWidget_Previews: PreviewProvider {
-    static let items = [
-        ListItem(id: 1, title: "Item 1"),
-        ListItem(id: 2, title: "Item 2"),
-    ]
+    static let items = (1...9).map { ListItem(id: $0, title: "Item \($0)") }
     
     static var previews: some View {
         Group {
