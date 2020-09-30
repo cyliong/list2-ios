@@ -33,29 +33,42 @@ struct ListWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        ZStack {
-            VStack(alignment: .leading) {
-                Text("List")
-                    .font(.headline)
-                    .bold()
-                
-                ForEach(entry.items) { item in
-                    Text(item.title)
-                        .font(.system(size: 15))
-                    Divider()
+        VStack(alignment: .leading) {
+            Text("List")
+                .font(.headline)
+                .bold()
+            
+            if entry.items.isEmpty {
+                VStack {
+                    Text("No Items")
+                        .foregroundColor(Color.gray)
                 }
-                .padding(1)
+                .frame(
+                    minWidth: 0,
+                    maxWidth: .infinity,
+                    minHeight: 0,
+                    maxHeight: .infinity
+                )
+            } else {
+                VStack(alignment: .leading) {
+                    ForEach(entry.items) { item in
+                        Text(item.title)
+                            .font(.system(size: 15))
+                        Divider()
+                    }
+                    .padding(.vertical, 1)
+                }
+                .frame(
+                    minWidth: 0,
+                    maxWidth: .infinity,
+                    minHeight: 0,
+                    maxHeight: .infinity,
+                    alignment: .topLeading
+                )
+                .padding(.top, 3)
             }
-            .frame(
-                minWidth: 0,
-                maxWidth: .infinity,
-                minHeight: 0,
-                maxHeight: .infinity,
-                alignment: .topLeading
-            )
-            .padding()
         }
-        .padding(3)
+        .padding()
     }
 }
 
