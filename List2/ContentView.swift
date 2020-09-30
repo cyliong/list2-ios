@@ -5,18 +5,26 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(listItems) { item in
-                    NavigationLink(destination: ItemView(listItems: self.$listItems, item: item)) {
-                        Text(item.title)
+            Group {
+                if listItems.isEmpty {
+                    Text("No Items")
+                        .foregroundColor(.gray)
+                        .font(.title)
+                } else {
+                    List {
+                        ForEach(listItems) { item in
+                            NavigationLink(destination: ItemView(listItems: self.$listItems, item: item)) {
+                                Text(item.title)
+                            }
+                        }
+                        .onDelete { indexSet in
+                            let dao = ListDatabase.shared.listItemDao
+                            indexSet.forEach { dao.delete(id: self.listItems[$0].id) }
+                            self.listItems = dao.getAll()
+
+                            reloadTimelinesOfListWidget()
+                        }
                     }
-                }
-                .onDelete { indexSet in
-                    let dao = ListDatabase.shared.listItemDao
-                    indexSet.forEach { dao.delete(id: self.listItems[$0].id) }
-                    self.listItems = dao.getAll()
-                    
-                    reloadTimelinesOfListWidget()
                 }
             }
             .navigationBarTitle("List")
