@@ -18,10 +18,17 @@ It uses generics, inheritance and Singleton pattern to make the creation of data
 check out the the integration of SwiftUI and Realm 
 on the [realm](https://github.com/cyliong/list2-ios/tree/realm) branch.*
 
+## Widget
+This project also implements a widget that can be added to the Home screen.
+
+An App Group container is created to share data between the app and the widget.
+
+In addition, `WidgetCenter` is used to reload widgets when the app updates its data.
+
 ## Dependencies
 - FMDB
 
 ## Requirements
 - Xcode 12 or higher
-- iOS 13.1 or higher
+- iOS 13.1 or higher (Widget is supported by iOS 14 or higher)
 - Swift 5 or higher
