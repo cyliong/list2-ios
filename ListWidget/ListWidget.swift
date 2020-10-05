@@ -3,7 +3,7 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     private var entry: ListEntry {
-        ListEntry(date: Date(), items: ListDatabase.shared.listItemDao.getAll())
+        ListEntry(date: Date(), items: ListDatabase.shared.listItemDao.getAll(limit: 9))
     }
     
     func placeholder(in context: Context) -> ListEntry {
