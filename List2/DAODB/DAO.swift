@@ -6,8 +6,11 @@ class DAO<E: Entity> {
         self.database = database
     }
     
-    func getAll() -> [E] {
-        let listOfColumnValues = database.query(table: E.tableName)
+    func getAll(limit: Int? = nil) -> [E] {
+        let listOfColumnValues = database.query(
+            table: E.tableName,
+            limit: limit == nil ? nil : String(limit!)
+        )
         var entities = [E]()
         for columnValues in listOfColumnValues {
             if let entity = E(columnValues: columnValues) {
