@@ -2,10 +2,6 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
-    private var entry: ListEntry {
-        ListEntry(date: Date(), items: ListDatabase.shared.listItemDao.getAll(limit: 9))
-    }
-    
     func placeholder(in context: Context) -> ListEntry {
         let sampleItems = [
             ListItem(id: 1, title: "Item 1"),
@@ -15,12 +11,26 @@ struct Provider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (ListEntry) -> ()) {
-        completion(entry)
+        completion(getEntry(in: context))
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        let timeline = Timeline(entries: [entry], policy: .never)
+        let timeline = Timeline(entries: [getEntry(in: context)], policy: .never)
         completion(timeline)
+    }
+    
+    private func getEntry(in context: Context) -> ListEntry {
+        let limit: Int
+        switch context.family {
+        case .systemLarge:
+            limit = 8
+        default:
+            limit = 3
+        }
+        return ListEntry(
+            date: Date(),
+            items: ListDatabase.shared.listItemDao.getAll(limit: limit)
+        )
     }
 }
 
