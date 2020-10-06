@@ -44,13 +44,13 @@ struct ListWidgetEntryView : View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("List")
+            Text(Constants.appTitle)
                 .font(.headline)
                 .bold()
             
             if entry.items.isEmpty {
                 VStack {
-                    Text("No Items")
+                    Text(Constants.noItems)
                         .foregroundColor(Color.gray)
                 }
                 .frame(
@@ -84,17 +84,16 @@ struct ListWidgetEntryView : View {
 
 @main
 struct ListWidget: Widget {
-    let kind: String = "com.example.ltp.list-widget"
-    
     init() {
         _ = ListDatabase.shared.create()
     }
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+        StaticConfiguration(kind: Constants.widgetKind, provider: Provider()) {
+            entry in
             ListWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("List")
+        .configurationDisplayName(Constants.appTitle)
         .description("Display list items.")
     }
 }

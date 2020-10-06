@@ -24,6 +24,7 @@
 		AF68B9CD251CDC7200B963C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF68B9CC251CDC7200B963C9 /* Assets.xcassets */; };
 		AF68B9D1251CDC7200B963C9 /* ListWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AF68B9C3251CDC6900B963C9 /* ListWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AFB7CDAD24F515F000B70742 /* FMDB in Frameworks */ = {isa = PBXBuildFile; productRef = AFB7CDAC24F515F000B70742 /* FMDB */; };
+		AFD0D77A252C21AA007AD84A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B00E6252B6E96003261C1 /* Constants.swift */; };
 		AFD536E6242DC01E006E8E9D /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E3242DC01E006E8E9D /* DAO.swift */; };
 		AFD536E7242DC01E006E8E9D /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E4242DC01E006E8E9D /* Entity.swift */; };
 		AFD536E8242DC01E006E8E9D /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E5242DC01E006E8E9D /* AppDatabase.swift */; };
@@ -328,6 +329,7 @@
 				AF5A5F85251E29C20063CCBF /* ListItem.swift in Sources */,
 				AF68B9CB251CDC6900B963C9 /* ListWidget.swift in Sources */,
 				AFE070B42520D8D700C9025E /* ListDatabase.swift in Sources */,
+				AFD0D77A252C21AA007AD84A /* Constants.swift in Sources */,
 				AF5A5F88251E29D00063CCBF /* Entity.swift in Sources */,
 				AFE070B72520D8E100C9025E /* AppDatabase.swift in Sources */,
 			);
