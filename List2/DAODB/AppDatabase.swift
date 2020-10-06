@@ -1,26 +1,39 @@
 class AppDatabase {
     
     private let name: String
+    private let group: String?
     private let createStatements: [String]
     private var database: FMDatabase?
     
-    init(name: String, createStatements: [String]) {
+    init(name: String, group: String? = nil, createStatements: [String]) {
         self.name = name
+        self.group = group
         self.createStatements = createStatements
     }
     
     func create() -> Bool {
-        guard let containerURL = FileManager
-                .default
-                .containerURL(
-                    forSecurityApplicationGroupIdentifier: Constants.appGroupID
-                )
-        else {
-            return false
-        }
-        
+        let baseURL: URL
         do {
-            let databaseURL = containerURL.appendingPathComponent(name)
+            if let group = group {
+                guard let containerURL = FileManager.default
+                        .containerURL(
+                            forSecurityApplicationGroupIdentifier: group
+                        )
+                else {
+                    return false
+                }
+                baseURL = containerURL
+            } else {
+                baseURL = try FileManager.default
+                    .url(
+                        for: .applicationSupportDirectory,
+                        in: .userDomainMask,
+                        appropriateFor: nil,
+                        create: true
+                    )
+            }
+            
+            let databaseURL = baseURL.appendingPathComponent(name)
             database = FMDatabase(url: databaseURL)
             if let database = database, open() {
                 for statement in createStatements {
