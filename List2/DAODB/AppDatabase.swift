@@ -13,7 +13,7 @@ class AppDatabase {
         guard let containerURL = FileManager
                 .default
                 .containerURL(
-                    forSecurityApplicationGroupIdentifier: "group.com.example.ltp.list"
+                    forSecurityApplicationGroupIdentifier: Constants.appGroupID
                 )
         else {
             return false

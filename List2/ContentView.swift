@@ -7,7 +7,7 @@ struct ContentView: View {
         NavigationView {
             Group {
                 if listItems.isEmpty {
-                    Text("No Items")
+                    Text(Constants.noItems)
                         .foregroundColor(.gray)
                         .font(.title)
                 } else {
@@ -27,7 +27,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationBarTitle("List")
+            .navigationBarTitle(Constants.appTitle)
             .navigationBarItems(trailing: NavigationLink(destination: ItemView(listItems: $listItems)) {
                 Image(systemName: "plus")
             })
