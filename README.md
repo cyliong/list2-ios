@@ -14,7 +14,7 @@ iOS 13.1 or higher is required to run the app. If there is a need to support ear
 
 ## Requirements
 - Xcode 11.1 or higher
-- Cocoapods 1.8.4 or higher
+- CocoaPods 1.9.3 or higher
 - iOS 13.1 or higher
 - Swift 5 or higher
 
