@@ -29,6 +29,7 @@
 		AFD536E7242DC01E006E8E9D /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E4242DC01E006E8E9D /* Entity.swift */; };
 		AFD536E8242DC01E006E8E9D /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E5242DC01E006E8E9D /* AppDatabase.swift */; };
 		AFD536EB242DC609006E8E9D /* ListDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536EA242DC609006E8E9D /* ListDatabase.swift */; };
+		AFDF33F8255AAB930073E30F /* ListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDF33F7255AAB930073E30F /* ListApp.swift */; };
 		AFE070B12520D61900C9025E /* FMDB in Frameworks */ = {isa = PBXBuildFile; productRef = AFE070B02520D61900C9025E /* FMDB */; };
 		AFE070B42520D8D700C9025E /* ListDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536EA242DC609006E8E9D /* ListDatabase.swift */; };
 		AFE070B72520D8E100C9025E /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E5242DC01E006E8E9D /* AppDatabase.swift */; };
@@ -83,6 +84,7 @@
 		AFD536E4242DC01E006E8E9D /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		AFD536E5242DC01E006E8E9D /* AppDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		AFD536EA242DC609006E8E9D /* ListDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDatabase.swift; sourceTree = "<group>"; };
+		AFDF33F7255AAB930073E30F /* ListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListApp.swift; sourceTree = "<group>"; };
 		AFE070BD2520DB1100C9025E /* List2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = List2.entitlements; sourceTree = "<group>"; };
 		AFE070C62520DCD700C9025E /* ListWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ListWidgetExtension.entitlements; sourceTree = "<group>"; };
 		AFE070D5252106AE00C9025E /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				AFD536E2242DBFB7006E8E9D /* DAODB */,
 				AF3C0DDD235F516400E5A7E2 /* Model */,
+				AFDF33F7255AAB930073E30F /* ListApp.swift */,
 				AF3C0DC9235F3C8F00E5A7E2 /* AppDelegate.swift */,
 				AF3C0DCB235F3C8F00E5A7E2 /* SceneDelegate.swift */,
 				AF3C0DCD235F3C8F00E5A7E2 /* ContentView.swift */,
@@ -312,6 +315,7 @@
 				AF3C0DDF235F51AA00E5A7E2 /* ListItem.swift in Sources */,
 				AFE070D6252106AE00C9025E /* View.swift in Sources */,
 				AFD536E8242DC01E006E8E9D /* AppDatabase.swift in Sources */,
+				AFDF33F8255AAB930073E30F /* ListApp.swift in Sources */,
 				AFD536EB242DC609006E8E9D /* ListDatabase.swift in Sources */,
 				AFD536E7242DC01E006E8E9D /* Entity.swift in Sources */,
 				AF3C0DCA235F3C8F00E5A7E2 /* AppDelegate.swift in Sources */,
