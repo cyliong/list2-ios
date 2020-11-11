@@ -13,13 +13,21 @@ struct ContentView: View {
                 } else {
                     List {
                         ForEach(listItems) { item in
-                            NavigationLink(destination: ItemView(listItems: self.$listItems, item: item)) {
+                            NavigationLink(
+                                destination: ItemView(
+                                    listItems: self.$listItems,
+                                    item: item
+                                )
+                            ) {
                                 Text(item.title)
                             }
                         }
                         .onDelete { indexSet in
                             let dao = ListDatabase.shared.listItemDao
-                            indexSet.forEach { dao.delete(id: self.listItems[$0].id) }
+                            indexSet.forEach {
+                                dao.delete(id: self.listItems[$0].id)
+                                
+                            }
                             self.listItems = dao.getAll()
 
                             reloadTimelinesOfListWidget()
@@ -28,9 +36,13 @@ struct ContentView: View {
                 }
             }
             .navigationBarTitle(Constants.appTitle)
-            .navigationBarItems(trailing: NavigationLink(destination: ItemView(listItems: $listItems)) {
-                Image(systemName: "plus")
-            })
+            .navigationBarItems(
+                trailing: NavigationLink(
+                    destination: ItemView(listItems: $listItems)
+                ) {
+                    Image(systemName: "plus")
+                }
+            )
         }
     }
 }
