@@ -2,7 +2,7 @@
 This is a simple iOS list app (to-do list, tasks, shopping list, recipes, and the like) built with SwiftUI,
 showcasing the implementation of CRUD operations with DAO pattern.
 
-iOS 13.1 or higher is required to run the app. If there is a need to support earlier versions of iOS, refer to a similar project, [list-ios](https://github.com/cyliong/list-ios).
+iOS 14 or higher is required to run the app. If there is a need to support earlier versions of iOS, refer to a similar project, [list-ios](https://github.com/cyliong/list-ios).
 
 ## Features
 - Display a list of items (`List`, `ForEach`)
@@ -29,6 +29,6 @@ In addition, `WidgetCenter` is used to reload widgets when the app updates its d
 - FMDB
 
 ## Requirements
-- Xcode 12 or higher
-- iOS 13.1 or higher (Widget is supported by iOS 14 or higher)
+- Xcode 12.1 or higher
+- iOS 14 or higher
 - Swift 5 or higher
