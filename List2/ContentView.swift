@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var listItems = ListDatabase.shared.listItemDao.getAll()
+    @State private var selectedItemId: Int? = nil
     
     var body: some View {
         NavigationView {
@@ -17,7 +18,9 @@ struct ContentView: View {
                                 destination: ItemView(
                                     listItems: self.$listItems,
                                     item: item
-                                )
+                                ),
+                                tag: item.id,
+                                selection: $selectedItemId
                             ) {
                                 Text(item.title)
                             }
@@ -43,6 +46,13 @@ struct ContentView: View {
                     Image(systemName: "plus")
                 }
             )
+        }
+        .onOpenURL { (url) in
+            if url.absoluteString.starts(with: Constants.editItemURLString) {
+                if let itemId = Int(url.lastPathComponent) {
+                    selectedItemId = itemId
+                }
+            }
         }
     }
 }
