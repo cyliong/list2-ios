@@ -19,11 +19,11 @@ check out the the integration of SwiftUI and Realm
 on the [realm](https://github.com/cyliong/list2-ios/tree/realm) branch.*
 
 ## Widget
-This project also implements a widget that can be added to the Home screen.
-
-An App Group container is created to share data between the app and the widget.
-
-In addition, `WidgetCenter` is used to reload widgets when the app updates its data.
+This project also implements a widget that can be added to the Home screen, with the following features:
+- Display a list of items from a database shared between the app and widget (SQLite database stored in an App Group container)
+- Tap the widget to launch the app
+- For medium and large widgets, tap a list item to launch the app's Edit Item screen (Deep linking with `Link` controls, `onOpenURL(perform:)`)
+- Widget will be updated when list items are modified from the app (using `WidgetCenter`'s `reloadTimelines(ofKind:)`)
 
 ## Dependencies
 - FMDB
