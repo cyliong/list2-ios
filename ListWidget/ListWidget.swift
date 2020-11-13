@@ -62,8 +62,14 @@ struct ListWidgetEntryView : View {
             } else {
                 VStack(alignment: .leading) {
                     ForEach(entry.items) { item in
-                        Text(item.title)
-                            .font(.system(size: 15))
+                        Link(
+                            item.title,
+                            destination: URL(
+                                string: "\(Constants.editItemURLString)\(item.id)"
+                            )!
+                        )
+                        .font(.system(size: 15))
+                        
                         Divider()
                     }
                     .padding(.vertical, 1)
