@@ -22,13 +22,15 @@ on the [realm](https://github.com/cyliong/list2-ios/tree/realm) branch.*
 This project also implements a widget that can be added to the Home screen, with the following features:
 - Display a list of items from a database shared between the app and widget (SQLite database stored in an App Group container)
 - Tap the widget to launch the app
-- For medium and large widgets, tap a list item to launch the app's Edit Item screen (Deep linking with `Link` controls, `onOpenURL(perform:)`)
+- For medium and large widgets: 
+  - Tap the Add button to launch the app's New Item screen (Deep linking with a `Link` control, `onOpenURL(perform:)`, `NavigationLink(destination:isActive:)`)
+  - Tap a list item to launch the app's Edit Item screen (Deep linking with `Link` controls, `onOpenURL(perform:)`, `NavigationLink(destination:tag:selection:)`)
 - Widget will be updated when list items are modified from the app (using `WidgetCenter`'s `reloadTimelines(ofKind:)`)
 
 ## Dependencies
 - FMDB
 
 ## Requirements
-- Xcode 12.1 or higher
+- Xcode 12.2 or higher
 - iOS 14 or higher
 - Swift 5 or higher
