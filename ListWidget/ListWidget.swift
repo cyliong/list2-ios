@@ -41,12 +41,26 @@ struct ListEntry: TimelineEntry {
 
 struct ListWidgetEntryView : View {
     var entry: Provider.Entry
+    
+    @Environment(\.widgetFamily) var family
+    
+    let titleTextView = Text(Constants.appTitle)
+        .font(.headline)
+        .bold()
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text(Constants.appTitle)
-                .font(.headline)
-                .bold()
+            if family == .systemSmall {
+                titleTextView
+            } else {
+                HStack {
+                    titleTextView
+                    Spacer()
+                    Link(destination: URL(string: Constants.addItemURLString)!) {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
             
             if entry.items.isEmpty {
                 VStack {
