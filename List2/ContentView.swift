@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var listItems = ListDatabase.shared.listItemDao.getAll()
+    @State private var isAddItemLinkActive = false
     @State private var selectedItemId: Int? = nil
     
     var body: some View {
@@ -41,14 +42,17 @@ struct ContentView: View {
             .navigationBarTitle(Constants.appTitle)
             .navigationBarItems(
                 trailing: NavigationLink(
-                    destination: ItemView(listItems: $listItems)
+                    destination: ItemView(listItems: $listItems),
+                    isActive: $isAddItemLinkActive
                 ) {
                     Image(systemName: "plus")
                 }
             )
         }
         .onOpenURL { (url) in
-            if url.absoluteString.starts(with: Constants.editItemURLString) {
+            if url.absoluteString == Constants.addItemURLString {
+                isAddItemLinkActive = true
+            } else if url.absoluteString.starts(with: Constants.editItemURLString) {
                 if let itemId = Int(url.lastPathComponent) {
                     selectedItemId = itemId
                 }
