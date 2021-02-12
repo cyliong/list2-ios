@@ -31,6 +31,6 @@ This project also implements a widget that can be added to the Home screen, with
 - FMDB
 
 ## Requirements
-- Xcode 12.3 or higher
+- Xcode 12.4 or higher
 - iOS 14 or higher
 - Swift 5 or higher
