@@ -27,6 +27,9 @@ This project also implements a widget that can be added to the Home screen, with
   - Tap a list item to launch the app's Edit Item screen (Deep linking with `Link` controls, `onOpenURL(perform:)`, `NavigationLink(destination:tag:selection:)`)
 - Widget will be updated when list items are modified from the app (using `WidgetCenter`'s `reloadTimelines(ofKind:)`)
 
+## UI Testing
+The project includes a sample implementation of UI test using the XCTest framework.
+
 ## Dependencies
 - FMDB
 
