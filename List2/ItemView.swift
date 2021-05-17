@@ -18,6 +18,7 @@ struct ItemView: View {
                         self.itemTitle = self.item!.title
                     }
                 }
+                .accessibilityIdentifier("title")
         }
         .navigationBarTitle(isNew ? "New Item" : "Edit Item")
         .navigationBarItems(
