@@ -15,7 +15,7 @@ class List2UITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        app.navigationBars["List"].buttons["plus"].tap()
+        app.navigationBars["List"].buttons["add"].tap()
         
         let title = app.textFields["Enter an item"]
         title.tap()
