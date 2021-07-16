@@ -1,28 +1,27 @@
 import XCTest
 
 class List2UITests: XCTestCase {
+    let app = XCUIApplication()
 
     override func setUpWithError() throws {
         continueAfterFailure = false
-
+        app.launch()
     }
 
     override func tearDownWithError() throws {
-        
     }
     
     func test_Add_an_item_to_the_list() throws {
-        let app = XCUIApplication()
-        app.launch()
-
-        app.navigationBars["List"].buttons["add"].tap()
+        let newItem = "Item 1"
         
-        let title = app.textFields["Enter an item"]
+        app.buttons["add"].tap()
+        
+        let title = app.textFields["title"]
         title.tap()
-        title.typeText("Item 1")
-        app.navigationBars["New Item"].buttons["Save"].tap()
+        title.typeText(newItem)
+        app.buttons["Save"].tap()
         
-        XCTAssertTrue(app.buttons["Item 1"].exists)
+        XCTAssertTrue(app.buttons[newItem].waitForExistence(timeout: 1))
     }
     
 }
