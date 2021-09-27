@@ -13,8 +13,8 @@ iOS 13.1 or higher is required to run the app. If there is a need to support ear
 - Realm Database
 
 ## Requirements
-- Xcode 12.5.1 or higher
-- CocoaPods 1.11.1 or higher
+- Xcode 13.0 or higher
+- CocoaPods 1.11.2 or higher
 - iOS 13.1 or higher
 - Swift 5 or higher
 
