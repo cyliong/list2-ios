@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0E1E382724362600A4C7F6 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = AF0E1E372724362600A4C7F6 /* GRDB */; };
 		AF1C90EE23605816007F655E /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1C90ED23605816007F655E /* ItemView.swift */; };
 		AF31646025B5DAEE006A5BF0 /* List2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31645F25B5DAEE006A5BF0 /* List2UITests.swift */; };
 		AF3B00E7252B6E96003261C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B00E6252B6E96003261C1 /* Constants.swift */; };
@@ -112,6 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFB7CDAD24F515F000B70742 /* FMDB in Frameworks */,
+				AF0E1E382724362600A4C7F6 /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +266,7 @@
 			name = List2;
 			packageProductDependencies = (
 				AFB7CDAC24F515F000B70742 /* FMDB */,
+				AF0E1E372724362600A4C7F6 /* GRDB */,
 			);
 			productName = List2;
 			productReference = AF3C0DC6235F3C8F00E5A7E2 /* List2.app */;
@@ -321,6 +324,7 @@
 			mainGroup = AF3C0DBD235F3C8F00E5A7E2;
 			packageReferences = (
 				AFB7CDAB24F515F000B70742 /* XCRemoteSwiftPackageReference "fmdb" */,
+				AF0E1E362724362600A4C7F6 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
 			);
 			productRefGroup = AF3C0DC7235F3C8F00E5A7E2 /* Products */;
 			projectDirPath = "";
@@ -717,6 +721,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AF0E1E362724362600A4C7F6 /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.12.0;
+			};
+		};
 		AFB7CDAB24F515F000B70742 /* XCRemoteSwiftPackageReference "fmdb" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ccgus/fmdb.git";
@@ -728,6 +740,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AF0E1E372724362600A4C7F6 /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF0E1E362724362600A4C7F6 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
+		};
 		AFB7CDAC24F515F000B70742 /* FMDB */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AFB7CDAB24F515F000B70742 /* XCRemoteSwiftPackageReference "fmdb" */;
