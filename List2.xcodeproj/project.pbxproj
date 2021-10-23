@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF0E1E382724362600A4C7F6 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = AF0E1E372724362600A4C7F6 /* GRDB */; };
+		AF0E1E3A2724371700A4C7F6 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = AF0E1E392724371700A4C7F6 /* GRDB */; };
 		AF1C90EE23605816007F655E /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1C90ED23605816007F655E /* ItemView.swift */; };
 		AF31646025B5DAEE006A5BF0 /* List2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31645F25B5DAEE006A5BF0 /* List2UITests.swift */; };
 		AF3B00E7252B6E96003261C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B00E6252B6E96003261C1 /* Constants.swift */; };
@@ -124,6 +125,7 @@
 				AF68B9C8251CDC6900B963C9 /* SwiftUI.framework in Frameworks */,
 				AF68B9C6251CDC6900B963C9 /* WidgetKit.framework in Frameworks */,
 				AFE070B12520D61900C9025E /* FMDB in Frameworks */,
+				AF0E1E3A2724371700A4C7F6 /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +289,7 @@
 			name = ListWidgetExtension;
 			packageProductDependencies = (
 				AFE070B02520D61900C9025E /* FMDB */,
+				AF0E1E392724371700A4C7F6 /* GRDB */,
 			);
 			productName = ListWidgetExtension;
 			productReference = AF68B9C3251CDC6900B963C9 /* ListWidgetExtension.appex */;
@@ -741,6 +744,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		AF0E1E372724362600A4C7F6 /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF0E1E362724362600A4C7F6 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
+		};
+		AF0E1E392724371700A4C7F6 /* GRDB */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AF0E1E362724362600A4C7F6 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
 			productName = GRDB;
