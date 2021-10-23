@@ -1,9 +1,12 @@
+import Foundation
+import GRDB
+
 class AppDatabase {
     
     private let name: String
     private let group: String?
     private let createStatements: [String]
-    private var database: FMDatabase?
+    private var databaseQueue: DatabaseQueue?
     
     init(name: String, group: String? = nil, createStatements: [String]) {
         self.name = name
@@ -34,25 +37,16 @@ class AppDatabase {
             }
             
             let databaseURL = baseURL.appendingPathComponent(name)
-            database = FMDatabase(url: databaseURL)
-            if let database = database, open() {
+            databaseQueue = try DatabaseQueue(path: databaseURL.path)
+            try databaseQueue!.write { database in
                 for statement in createStatements {
-                    try database.executeUpdate(statement, values: nil)
+                    try database.execute(sql: statement)
                 }
-                close()
             }
             return true
         } catch {
             return false
         }
-    }
-    
-    func open() -> Bool {
-        database?.open() ?? false
-    }
-    
-    func close() {
-        database?.close()
     }
     
     func query(
@@ -92,22 +86,26 @@ class AppDatabase {
         }
         
         var listOfColumnValues = [[String: Any?]]()
-        if let database = database,
-            open(),
-            let resultSet = database.executeQuery(statement, withArgumentsIn: selectionArgs ?? [])
+        if let databaseQueue = databaseQueue,
+           let arguments = StatementArguments(selectionArgs ?? []),
+           let rows = try? databaseQueue.read({ database in
+               try Row.fetchAll(database, sql: statement, arguments: arguments)
+           })
         {
-            while resultSet.next() {
+            for row in rows {
                 var columnValues = [String: Any?]()
-                for columnIndex in 0..<resultSet.columnCount {
-                    if let columnName = resultSet.columnName(for: columnIndex) {
-                        columnValues[columnName] = resultSet.object(forColumnIndex: columnIndex)
+                for (column, databaseValue) in row {
+                    switch databaseValue.storage {
+                    case .int64:
+                        columnValues[column] = Int.fromDatabaseValue(databaseValue)
+                    default:
+                        columnValues[column] = databaseValue.storage.value
                     }
                 }
                 if !columnValues.isEmpty {
                     listOfColumnValues.append(columnValues)
                 }
             }
-            close()
         }
         return listOfColumnValues
     }
@@ -131,15 +129,19 @@ class AppDatabase {
         
         let statement = "INSERT INTO \(table) \(columns) VALUES \(placeholders)"
         
-        guard let database = database, open() else {
+        guard let databaseQueue = databaseQueue,
+              let arguments = StatementArguments(values)
+        else {
             return -1
         }
-        if database.executeUpdate(statement, withArgumentsIn: values) {
-            let rowId = Int(database.lastInsertRowId)
-            close()
-            return rowId == 0 ? -1 : rowId
-        } else {
-            close()
+        do {
+            var rowId = -1
+            try databaseQueue.write { database in
+                try database.execute(sql: statement, arguments: arguments)
+                rowId = Int(database.lastInsertedRowID)
+            }
+            return rowId > 0 ? rowId : -1
+        } catch {
             return -1
         }
     }
@@ -164,15 +166,19 @@ class AppDatabase {
             }
         }
         
-        guard let database = database, open() else {
+        guard let databaseQueue = databaseQueue,
+              let arguments = StatementArguments(values)
+        else {
             return 0
         }
-        if database.executeUpdate(statement, withArgumentsIn: values) {
-            let rowsAffected = Int(database.changes)
-            close()
+        do {
+            var rowsAffected = 0
+            try databaseQueue.write { database in
+                try database.execute(sql: statement, arguments: arguments)
+                rowsAffected = database.changesCount
+            }
             return rowsAffected
-        } else {
-            close()
+        } catch {
             return 0
         }
     }
@@ -184,15 +190,19 @@ class AppDatabase {
             statement += "WHERE \(whereClause)"
         }
         
-        guard let database = database, open() else {
+        guard let databaseQueue = databaseQueue,
+              let arguments = StatementArguments(whereArgs ?? [])
+        else {
             return 0
         }
-        if database.executeUpdate(statement, withArgumentsIn: whereArgs ?? []) {
-            let rowsAffected = Int(database.changes)
-            close()
+        do {
+            var rowsAffected = 0
+            try databaseQueue.write { database in
+                try database.execute(sql: statement, arguments: arguments)
+                rowsAffected = database.changesCount
+            }
             return rowsAffected
-        } else {
-            close()
+        } catch {
             return 0
         }
     }
