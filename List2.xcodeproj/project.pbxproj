@@ -25,14 +25,12 @@
 		AF68B9CB251CDC6900B963C9 /* ListWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF68B9CA251CDC6900B963C9 /* ListWidget.swift */; };
 		AF68B9CD251CDC7200B963C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF68B9CC251CDC7200B963C9 /* Assets.xcassets */; };
 		AF68B9D1251CDC7200B963C9 /* ListWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AF68B9C3251CDC6900B963C9 /* ListWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		AFB7CDAD24F515F000B70742 /* FMDB in Frameworks */ = {isa = PBXBuildFile; productRef = AFB7CDAC24F515F000B70742 /* FMDB */; };
 		AFD0D77A252C21AA007AD84A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B00E6252B6E96003261C1 /* Constants.swift */; };
 		AFD536E6242DC01E006E8E9D /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E3242DC01E006E8E9D /* DAO.swift */; };
 		AFD536E7242DC01E006E8E9D /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E4242DC01E006E8E9D /* Entity.swift */; };
 		AFD536E8242DC01E006E8E9D /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E5242DC01E006E8E9D /* AppDatabase.swift */; };
 		AFD536EB242DC609006E8E9D /* ListDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536EA242DC609006E8E9D /* ListDatabase.swift */; };
 		AFDF33F8255AAB930073E30F /* ListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDF33F7255AAB930073E30F /* ListApp.swift */; };
-		AFE070B12520D61900C9025E /* FMDB in Frameworks */ = {isa = PBXBuildFile; productRef = AFE070B02520D61900C9025E /* FMDB */; };
 		AFE070B42520D8D700C9025E /* ListDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536EA242DC609006E8E9D /* ListDatabase.swift */; };
 		AFE070B72520D8E100C9025E /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E5242DC01E006E8E9D /* AppDatabase.swift */; };
 		AFE070BA2520D8ED00C9025E /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD536E3242DC01E006E8E9D /* DAO.swift */; };
@@ -112,7 +110,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFB7CDAD24F515F000B70742 /* FMDB in Frameworks */,
 				AF0E1E382724362600A4C7F6 /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,7 +120,6 @@
 			files = (
 				AF68B9C8251CDC6900B963C9 /* SwiftUI.framework in Frameworks */,
 				AF68B9C6251CDC6900B963C9 /* WidgetKit.framework in Frameworks */,
-				AFE070B12520D61900C9025E /* FMDB in Frameworks */,
 				AF0E1E3A2724371700A4C7F6 /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,7 +261,6 @@
 			);
 			name = List2;
 			packageProductDependencies = (
-				AFB7CDAC24F515F000B70742 /* FMDB */,
 				AF0E1E372724362600A4C7F6 /* GRDB */,
 			);
 			productName = List2;
@@ -286,7 +281,6 @@
 			);
 			name = ListWidgetExtension;
 			packageProductDependencies = (
-				AFE070B02520D61900C9025E /* FMDB */,
 				AF0E1E392724371700A4C7F6 /* GRDB */,
 			);
 			productName = ListWidgetExtension;
@@ -324,7 +318,6 @@
 			);
 			mainGroup = AF3C0DBD235F3C8F00E5A7E2;
 			packageReferences = (
-				AFB7CDAB24F515F000B70742 /* XCRemoteSwiftPackageReference "fmdb" */,
 				AF0E1E362724362600A4C7F6 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
 			);
 			productRefGroup = AF3C0DC7235F3C8F00E5A7E2 /* Products */;
@@ -730,14 +723,6 @@
 				minimumVersion = 5.12.0;
 			};
 		};
-		AFB7CDAB24F515F000B70742 /* XCRemoteSwiftPackageReference "fmdb" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ccgus/fmdb.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.7.7;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -750,16 +735,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AF0E1E362724362600A4C7F6 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
 			productName = GRDB;
-		};
-		AFB7CDAC24F515F000B70742 /* FMDB */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AFB7CDAB24F515F000B70742 /* XCRemoteSwiftPackageReference "fmdb" */;
-			productName = FMDB;
-		};
-		AFE070B02520D61900C9025E /* FMDB */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AFB7CDAB24F515F000B70742 /* XCRemoteSwiftPackageReference "fmdb" */;
-			productName = FMDB;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
