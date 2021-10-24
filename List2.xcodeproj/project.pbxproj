@@ -90,7 +90,6 @@
 		AF68B9CA251CDC6900B963C9 /* ListWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWidget.swift; sourceTree = "<group>"; };
 		AF68B9CC251CDC7200B963C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF68B9CE251CDC7200B963C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFB4C6D4242D069D0017D82E /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		AFD536E3242DC01E006E8E9D /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		AFD536E4242DC01E006E8E9D /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		AFD536E5242DC01E006E8E9D /* AppDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
@@ -178,7 +177,6 @@
 				AF3C0DD4235F3C9100E5A7E2 /* LaunchScreen.storyboard */,
 				AF3C0DD7235F3C9100E5A7E2 /* Info.plist */,
 				AFE070BD2520DB1100C9025E /* List2.entitlements */,
-				AFB4C6D4242D069D0017D82E /* Bridging-Header.h */,
 				AF3C0DD1235F3C9100E5A7E2 /* Preview Content */,
 			);
 			path = List2;
