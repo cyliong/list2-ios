@@ -6,7 +6,8 @@ with DAO pattern.
 
 iOS 14 or higher is required to run the app. 
 If there is a need to support earlier versions of iOS, 
-refer to a similar project, [list-ios](https://github.com/cyliong/list-ios).
+refer to a similar project, 
+[list-ios](https://github.com/cyliong/list-ios).
 
 ## Features
 - Display a list of items (`List`, `ForEach`)
@@ -22,15 +23,15 @@ It uses generics, inheritance and Singleton pattern
 to make the creation of data access objects, 
 as well as performing CRUD operations easier.
 
-*If you are looking for an alternative database option other than SQLite, 
-check out the the integration of SwiftUI and Realm 
+*If you are looking for an alternative database option 
+other than SQLite, check out the the integration of SwiftUI and Realm 
 on the [realm](https://github.com/cyliong/list2-ios/tree/realm) branch.*
 
 ## Widget
-This project also implements a widget that can be added to the Home screen, 
-with the following features:
-- Display a list of items from a database shared between the app and widget 
-  (SQLite database stored in an App Group container)
+This project also implements a widget that can be added to 
+the Home screen, with the following features:
+- Display a list of items from a database shared between 
+  the app and widget (SQLite database stored in an App Group container)
 - Tap the widget to launch the app
 - For medium and large widgets: 
   - Tap the Add button to launch the app's New Item screen 
@@ -47,7 +48,7 @@ The project includes a sample implementation of UI test
 using the XCTest framework.
 
 ## Dependencies
-- FMDB
+- GRDB
 
 ## Requirements
 - Xcode 13.0 or higher
