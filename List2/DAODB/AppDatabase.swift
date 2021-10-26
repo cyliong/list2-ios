@@ -136,10 +136,9 @@ class AppDatabase {
             return -1
         }
         do {
-            var rowId = -1
-            try databaseQueue.write { database in
+            let rowId: Int = try databaseQueue.write { database in
                 try database.execute(sql: statement, arguments: arguments)
-                rowId = Int(database.lastInsertedRowID)
+                return Int(database.lastInsertedRowID)
             }
             return rowId > 0 ? rowId : -1
         } catch {
