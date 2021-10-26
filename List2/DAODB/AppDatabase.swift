@@ -19,9 +19,9 @@ class AppDatabase {
         do {
             if let group = group {
                 guard let containerURL = FileManager.default
-                        .containerURL(
-                            forSecurityApplicationGroupIdentifier: group
-                        )
+                    .containerURL(
+                        forSecurityApplicationGroupIdentifier: group
+                    )
                 else {
                     return false
                 }
@@ -97,7 +97,8 @@ class AppDatabase {
                 for (column, databaseValue) in row {
                     switch databaseValue.storage {
                     case .int64:
-                        columnValues[column] = Int.fromDatabaseValue(databaseValue)
+                        columnValues[column] = Int
+                            .fromDatabaseValue(databaseValue)
                     default:
                         columnValues[column] = databaseValue.storage.value
                     }
@@ -146,7 +147,13 @@ class AppDatabase {
         }
     }
     
-    func update(table: String, columnValues: [String: Any?], whereClause: String? = nil, whereArgs: [Any]? = nil) -> Int {
+    func update(
+        table: String,
+        columnValues: [String: Any?],
+        whereClause: String? = nil,
+        whereArgs: [Any]? = nil
+    ) -> Int {
+        
         var statement = "UPDATE \(table) SET "
         var values = [Any]()
         
@@ -183,7 +190,12 @@ class AppDatabase {
         }
     }
     
-    func delete(table: String, whereClause: String? = nil, whereArgs: [Any]? = nil) -> Int {
+    func delete(
+        table: String,
+        whereClause: String? = nil,
+        whereArgs: [Any]? = nil
+    ) -> Int {
+        
         var statement = "DELETE FROM \(table) "
         
         if let whereClause = whereClause {
