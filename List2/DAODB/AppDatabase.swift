@@ -136,7 +136,7 @@ class AppDatabase {
             return -1
         }
         do {
-            let rowId: Int = try databaseQueue.write { database in
+            let rowId = try databaseQueue.write { database -> Int in
                 try database.execute(sql: statement, arguments: arguments)
                 return Int(database.lastInsertedRowID)
             }
