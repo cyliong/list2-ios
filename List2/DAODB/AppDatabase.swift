@@ -178,12 +178,10 @@ class AppDatabase {
             return 0
         }
         do {
-            var rowsAffected = 0
-            try databaseQueue.write { database in
+            return try databaseQueue.write { database -> Int in
                 try database.execute(sql: statement, arguments: arguments)
-                rowsAffected = database.changesCount
+                return database.changesCount
             }
-            return rowsAffected
         } catch {
             return 0
         }
