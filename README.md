@@ -23,8 +23,12 @@ It uses generics, inheritance and Singleton pattern
 to make the creation of data access objects, 
 as well as performing CRUD operations easier.
 
-*If you are looking for an alternative database option 
-other than SQLite, check out the the integration of SwiftUI and Realm 
+*The data access layer is built on top of the GRDB library. 
+However, a version built on top of the FMDB library can be found on 
+the [fmdb](https://github.com/cyliong/list2-ios/tree/fmdb) branch.*
+
+*Otherwise, if you are looking for an alternative database option 
+other than SQLite, check out the integration of SwiftUI and Realm 
 on the [realm](https://github.com/cyliong/list2-ios/tree/realm) branch.*
 
 ## Widget
