@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/groue/GRDB.swift.git",
         "state": {
           "branch": null,
-          "revision": "dfca044433050bb3e297761bf827e01ef376f5d9",
-          "version": "5.18.0"
+          "revision": "14d8763a841965b99f48b77a25dab8e6290aff83",
+          "version": "5.19.0"
         }
       }
     ]
