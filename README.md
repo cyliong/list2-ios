@@ -51,6 +51,6 @@ using the XCTest framework.
 - FMDB
 
 ## Requirements
-- Xcode 13.1 or higher
+- Xcode 13.2.1 or higher
 - iOS 14 or higher
 - Swift 5 or higher
