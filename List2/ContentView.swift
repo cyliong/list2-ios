@@ -49,6 +49,7 @@ struct ContentView: View {
                 }
             )
         }
+        .navigationViewStyle(.stack)
         .onOpenURL { (url) in
             if url.absoluteString == Constants.addItemURLString {
                 isAddItemLinkActive = true
