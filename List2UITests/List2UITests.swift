@@ -14,7 +14,7 @@ class List2UITests: XCTestCase {
     func test_Add_an_item_to_the_list() throws {
         let newItem = "Item 1"
         
-        app.buttons["add"].tap()
+        app.buttons["Add"].tap()
         
         let title = app.textFields["title"]
         title.tap()
