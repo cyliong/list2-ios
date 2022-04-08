@@ -39,7 +39,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationBarTitle(Constants.appTitle)
+            .navigationTitle(Constants.appTitle)
             .navigationBarItems(
                 trailing: NavigationLink(
                     destination: ItemView(listItems: $listItems),
