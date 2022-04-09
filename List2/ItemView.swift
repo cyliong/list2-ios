@@ -20,7 +20,7 @@ struct ItemView: View {
                 }
                 .accessibilityIdentifier("title")
         }
-        .navigationBarTitle(isNew ? "New Item" : "Edit Item")
+        .navigationTitle(isNew ? "New Item" : "Edit Item")
         .navigationBarItems(
             trailing: Button("Save") {
                 if self.itemTitle.trimmingCharacters(in: .whitespaces).isEmpty {
